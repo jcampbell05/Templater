@@ -7,7 +7,7 @@
 [![Blog](https://img.shields.io/badge/blog-honzadvorsky.com-green.svg)](http://honzadvorsky.com)
 [![Twitter Czechboy0](https://img.shields.io/badge/twitter-czechboy0-green.svg)](http://twitter.com/czechboy0)
 
-> Very basic string templating engine.
+> Very basic Swift templating engine. macOS and Linux ready.
 
 Templater is a very simple tool aimed at solving the simple task: in a string template, fill in a few variables with certain values. Something like [Stencil](https://github.com/kylef/Stencil) or [Mustache](http://mustache.github.io). Just a super simple version of them.
 
