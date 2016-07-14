@@ -22,7 +22,6 @@ The template string must contain one or more strings like `{{ variable_name }}`,
 
 ```swift
 do {
-	
 	//create the template
 	let template = Template("Hello, {{ name }}! Today is {{ day }} and it will be {{ weather }}.")
 
@@ -37,7 +36,6 @@ do {
 	let result = try template.fill(with: context)
 
 	//result: "Hello, Tim! Today is Thursday and it will be sunny."
-
 } catch {
 	print("Template error: \(error)")
 }
