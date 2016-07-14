@@ -14,11 +14,11 @@ Templater is a very simple tool aimed at solving the simple task: in a string te
 # :question: Why?
 I needed to fill in a large markdown file with fresh data every day, to generate a pretty [report](https://github.com/czechboy0/swiftpm-packages-statistics). The existing libraries seemed like an overkill for the simple usecase, so I wrote a lightweight (literally less than 100 lines of code) solution myself. 
 
-# Features
+# :rocket: Features
 
 The template string must contain one or more strings like `{{ variable_name }}`, such as `Hello, {{ name }}!`. When you render this template with the context of `name = "world"`, you'll get `Hello, world!`.
 
-# Usage
+# :hammer: Usage
 
 ```swift
 do {
