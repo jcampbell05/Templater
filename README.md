@@ -12,7 +12,7 @@
 Templater is a very simple tool aimed at solving the simple task: in a string template, fill in a few variables with certain values. Something like [Stencil](https://github.com/kylef/Stencil) or [Mustache](http://mustache.github.io). Just a super simple version of them.
 
 # :question: Why?
-I needed to fill in a large markdown file with fresh data every day, to generate a pretty [report](https://github.com/czechboy0/swiftpm-packages-statistics).
+I needed to fill in a large markdown file with fresh data every day, to generate a pretty [report](https://github.com/czechboy0/swiftpm-packages-statistics). The existing libraries seemed like an overkill for the simple usecase, so I wrote a lightweight (literally less than 100 lines of code) solution myself. 
 
 # Features
 
