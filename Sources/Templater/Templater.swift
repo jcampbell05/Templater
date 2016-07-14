@@ -1,9 +1,5 @@
 //Templater.swift
 
-//basic templater, where {{ NAME }} gets replaced by the value of NAME in the context
-//inspired by Stencil: https://github.com/kylef/Stencil, but Templater only does one
-//thing - replaces variables with their values, nothing else.
-
 public struct Template {
     public let contents: String
 
@@ -50,6 +46,8 @@ private func _run(template: String, context: [String: String]) throws -> String 
     var varName: [Character] = []
     var openIndex: String.Index? = nil
     
+    var unusedValues = Set(context.keys)
+    
     while curr < chars.endIndex {
         if isOpen {
             //expect close, otherwise read insides
@@ -59,7 +57,7 @@ private func _run(template: String, context: [String: String]) throws -> String 
                 let range = Range(uncheckedBounds: (openIdx, curr))
                 let actualVarName = varName.dropLast(3)
                 let name = String(actualVarName)
-                
+                unusedValues.remove(name)
                 guard let value = context[name] else {
                     throw TemplateError.valuesNotFoundInContext([name])
                 }
@@ -84,6 +82,10 @@ private func _run(template: String, context: [String: String]) throws -> String 
         }
         buffer.push(chars[curr])
         chars.formIndex(after: &curr)
+    }
+    
+    guard unusedValues.isEmpty else {
+        throw TemplateError.variablesNotFoundInTemplate(Array(unusedValues))
     }
     
     return String(chars)
