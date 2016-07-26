@@ -27,7 +27,7 @@ private struct BufferOfThree {
     }
 }
 
-public enum TemplateError: ErrorProtocol {
+public enum TemplateError: Error {
     case malformedTemplate(String)
     case valuesNotFoundInContext([String])
     case variablesNotFoundInTemplate([String])
